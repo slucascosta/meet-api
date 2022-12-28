@@ -6,10 +6,10 @@ import controllers from "./controllers/index.js"
 
 const httpServer = new ExpressAdapter()
 
-const socket = new Socket(httpServer)
-socket.init()
+// const socket = new Socket(httpServer)
+// socket.init()
 
-services(socket)
+// services(socket)
 controllers(httpServer);
 
 httpServer.listen(API_PORT);
