@@ -2,9 +2,8 @@
   "name": "meet",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
   "scripts": {
-    "start": "node src/index.js",
+    "start": "node ./src/index.js",
     "dev": "nodemon --watch src src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
