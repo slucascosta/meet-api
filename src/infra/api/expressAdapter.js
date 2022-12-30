@@ -23,7 +23,8 @@ export default class ExpressAdapter {
 
   init() {
     this.app.use(cors({
-      origin: APP_URL
+      origin: APP_URL,
+      methods: ['GET','POST']
     }));
     this.app.use(express.json());
   }
