@@ -3,6 +3,7 @@ import cors from "cors";
 import { createServer } from "https";
 import fs from "fs";
 import { fullPath } from "../helper.js";
+import { APP_URL } from "../config/settings.js";
 
 export default class ExpressAdapter {
   app;
@@ -21,7 +22,9 @@ export default class ExpressAdapter {
   }
 
   init() {
-    this.app.use(cors());
+    this.app.use(cors({
+      origin: APP_URL
+    }));
     this.app.use(express.json());
   }
 
