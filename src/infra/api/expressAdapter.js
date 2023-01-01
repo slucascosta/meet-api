@@ -11,11 +11,15 @@ export default class ExpressAdapter {
 
   constructor() {
     this.app = express();
+    let options = {};
 
-    const options = {
-      key: fs.readFileSync(fullPath(import.meta.url, "../security/cert.key")),
-      cert: fs.readFileSync(fullPath(import.meta.url, "../security/cert.pem"))
-    };
+    if (fs.existsSync(fullPath(import.meta.url, "../security/cert.key"))) {
+      options = {
+        key: fs.readFileSync(fullPath(import.meta.url, "../security/cert.key")),
+        cert: fs.readFileSync(fullPath(import.meta.url, "../security/cert.pem"))
+      };
+    }
+
     this.server = createServer(options, this.app);
 
     this.init();
