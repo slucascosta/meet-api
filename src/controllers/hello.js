@@ -7,7 +7,7 @@ export default class HelloController {
   }
 
   #init() {
-    this.#httpServer.on("get", "*", (...args) => this.#hello(...args));
+    this.#httpServer.on("get", "/*", (...args) => this.#hello(...args));
   }
 
   #hello(params, body) {

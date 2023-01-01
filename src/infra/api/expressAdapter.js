@@ -38,7 +38,7 @@ export default class ExpressAdapter {
   }
 
   listen(port) {
-    this.server.listen(port, "0.0.0.0", () => {
+    this.server.listen(port, () => {
       console.log(`App listenig on port ${port}`);
     });
   }
