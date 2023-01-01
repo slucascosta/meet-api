@@ -1,2 +1,4 @@
 node_modules
 public
+src/infra/security/cert.key
+src/infra/security/cert.pem
